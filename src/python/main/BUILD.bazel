@@ -1,0 +1,24 @@
+py_binary(
+    name = "main",
+    srcs = ["main.py"],
+    deps = ["//src/python/lib"],
+)
+
+py_binary(
+    name = "main_with_repo",
+    srcs = ["main.py"],
+    main = "main.py",
+    deps = [
+        "//src/python/lib",
+        "@rospkg",
+    ],
+)
+
+py_binary(
+    name = "main_with_imports",
+    srcs = ["main_with_imports.py"],
+    deps = [
+        "//src/python/lib:lib_with_imports",
+        "@rospkg",
+    ],
+)
